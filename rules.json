@@ -1,0 +1,82 @@
+{
+  "scoring": {
+    "hitPoints": 10,
+    "missPoints": -5,
+    "alienTypes": {
+      "basic": {
+        "points": 10,
+        "probability": 0.6
+      },
+      "fast": {
+        "points": 15,
+        "probability": 0.2
+      },
+      "bonus": {
+        "points": 25,
+        "probability": 0.15
+      },
+      "special": {
+        "points": 50,
+        "probability": 0.05
+      }
+    }
+  },
+  "gameplay": {
+    "startingLives": 3,
+    "alienLifetime": 3000,
+    "spawnInterval": 1500,
+    "difficultyInterval": 30000,
+    "maxDifficulty": 5,
+    "spawnRateIncrease": 0.8,
+    "lifetimeDecrease": 0.9
+  },
+  "visuals": {
+    "alienSizes": {
+      "basic": 40,
+      "fast": 30,
+      "bonus": 50,
+      "special": 35
+    },
+    "colors": {
+      "basic": "#ff6b6b",
+      "fast": "#4ecdc4",
+      "bonus": "#45b7d1",
+      "special": "#f9ca24"
+    },
+    "effects": {
+      "fadeInDuration": 200,
+      "fadeOutDuration": 300,
+      "hitAnimationDuration": 300
+    }
+  },
+  "bounds": {
+    "marginFromEdge": 60,
+    "canvasWidth": 800,
+    "canvasHeight": 600
+  },
+  "movement": {
+    "randomSeed": 50,
+    "enabled": true,
+    "basic": {
+      "speed": 0.5,
+      "directionChangeInterval": 2000,
+      "chaosLevel": 0.3
+    },
+    "fast": {
+      "speed": 1.2,
+      "directionChangeInterval": 800,
+      "chaosLevel": 0.8
+    },
+    "bonus": {
+      "speed": 0.8,
+      "pattern": "circular",
+      "radius": 30,
+      "frequency": 0.02
+    },
+    "special": {
+      "teleportInterval": 1500,
+      "pauseDuration": 300,
+      "maxJumpDistance": 100
+    }
+  }
+}

@@ -1,0 +1,193 @@
+/* Alien Smash Game Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.game-container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    border: 2px solid rgba(0, 255, 255, 0.5);
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.game-header h1 {
+    font-size: 2.5em;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.stat {
+    text-align: center;
+    min-width: 100px;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    color: #cccccc;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat span:last-child {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+}
+
+.game-canvas-container {
+    position: relative;
+    display: inline-block;
+}
+
+#gameCanvas {
+    border: 3px solid rgba(0, 255, 255, 0.6);
+    border-radius: 5px;
+    background: #0a0a2e;
+    display: block;
+    cursor: crosshair;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+#gameCanvas:hover {
+    border-color: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+}
+
+.game-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    z-index: 10;
+    min-width: 300px;
+}
+
+.game-message h2 {
+    font-size: 2em;
+    color: #00ffff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.game-message p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.game-message p:last-child {
+    font-size: 1em;
+    color: #cccccc;
+    margin-top: 20px;
+    animation: pulse 2s infinite;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .game-container {
+        padding: 10px;
+    }
+    
+    .game-header h1 {
+        font-size: 2em;
+    }
+    
+    .game-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .stat {
+        min-width: auto;
+    }
+}
+
+/* Animation classes for game effects */
+.alien-hit {
+    animation: alienHit 0.3s ease-out;
+}
+
+.alien-miss {
+    animation: alienMiss 0.5s ease-out;
+}
+
+@keyframes alienHit {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(0); }
+}
+
+@keyframes alienMiss {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Click effect */
+.click-effect {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00ffff;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: clickEffect 0.3s ease-out;
+}
+
+@keyframes clickEffect {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
