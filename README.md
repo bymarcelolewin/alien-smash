@@ -79,3 +79,6 @@ Edit `rules.json` to adjust:
 
 - **Mouse Click**: Hit aliens to score points
 - **Spacebar**: Start game or restart after game over
+
+## Updates
+Coming soon!
